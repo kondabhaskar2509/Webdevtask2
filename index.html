@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Cyberscape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="map"></canvas>
+    <div id="gameScreen">
+
+        <div id="buttons">
+            <div id="toggle" onclick="toggleGame()">START THE MISSION</div>
+            <div id="reset" onclick="location.reload()">RESET THE MISSION</div>
+        </div>
+
+        <div id="header">
+            <div id="position">X : Y :</div></br>
+            <div id="pHealth">PLAYER HEALTH :</div>
+            <div id="sHealth">SYSTEM HEALTH :</div>
+            <div id="Keys">KEYS ON HAND :</div>
+            <div id="sCollected">SHARDS COLLECTED :</div>
+            <div id="sDelivered">SHARDS DELIVERED : </div>
+            <div id="hScore">HIGH SCORE :</div>
+        </div>
+
+        <div id="slidercontrol">   
+            <input type="range" min="0" max="100"  id="slider" ></br>
+            <span id="volume" position="centre ">Volume: </span>
+        </div>
+    
+        <div id="mutecontrol">
+            <span id="mutestatus" >Unmuted:</span>
+            <button id="mute" >🔊</button>
+        </div>
+        
+
+   
+        <div id="gamerules">
+           <h1>MISSION CYBERIA</h1>
+    
+            </br><h3>➤ CORE OBJECTIVE</h3>
+            Collect encryption keys to decrypt them and get the data shards at the Central Hub then deliver them to the Base Station to restore system health.</br>
+
+            </br><h3>➤ CONTROLS</h3>
+            ◈ WASD or Arrows for Movement</br>
+            ◈ P for Play/Pause</br>
+            ◈ F for Fullscreen </br>
+            ◈ Left Click for shooting </br>
+            ◈ R for Reset </br>
+            ◈ M for Mute </br>
+             
+            </br><h3>➤ STRATEGY</h3>
+            ◈ White = 1 encryption key , Yellow = 2 encyption keys , Red = 3 encryption keys</br>
+            ◈ 5 keys required to decrypt 1 data shard</br>
+            ◈ Decryption only possible at Central Hub (cyan)</br>
+            ◈ Delivery only possible at Base Station (pink)</br>
+            ◈ Each delivered shard increases system health by 10</br>
+            ◈ Heal at Central Hub or Base Station</br>
+            ◈ Destroy towers by shooting their core</br>
+            ◈ Keys respawn periodically</br>
+          
+            </br><h3>➤ MISSION CONDITIONS</h3>
+            ◈ WON --> System health reaches 100</br>
+            ◈ LOST --> System health ≤ 15 OR player health ≤ 25</br>
+        </div>
+        </div>
+
+         <div id="GL"  >
+            <div>
+            <span id="GLHS">HIGH SCORE:</span>
+            <span id="GLYS">YOUR SCORE:</span>
+            </div></br>
+            <span id="GLMessage">The AI system has been destroyed. Your mission to restore AUREX has failed.</br>Thank you for playing The GAME !!!</span></br>
+            <button id="GLreset" onclick="location.reload()">RETRY MISSION</button>
+         </div>
+    
+         <div id="GW"  >
+            <div>
+            <span id="GWHS">HIGH SCORE:</span>
+            <span id="GWYS">YOUR SCORE:</span>
+            </div></br>
+            <span id="GWMessage">AUREX AI System restored! The cyberia  is now fully operational.</br>Thank You For Playing The GAME !!!</span></br>
+            <button id="GWreset" onclick="location.reload()">NEW MISSION</button>
+         </div>
+    
+    <script src="setup.js"></script>
+    <script src="gameplay.js"></script>
+</body>
+</html>
